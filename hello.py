@@ -38,7 +38,7 @@ for arg in sys.argv[1:]:
     key = key.lstrip("-").strip()
     value = value.strip()
     if key not in arguments:
-        print(f"Invalid Option {Key}")
+        print(f"Invalid Option {key}")
         sys.exit()
     arguments[key] = value
 
