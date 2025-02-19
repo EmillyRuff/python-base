@@ -3,17 +3,31 @@
 import sys
 import os
 
-# LBYL - Look Before You Leap
+# EAFP - Easy to Ask Forgiveness than permission
+# (É mais fácil pedir perdão do que permissão)
 
-if os.path.exists("names.txt"):
-    input("...") # Race Condition
+try:
     names = open("names.txt").readlines()
-else:
-    print("[Error] File names.txt not found.")
+
+except FileNotFoundError as e:
+    print(f"{str(e)}.")
+    sys.exit(1)
+    # TODO: Usar retry
+
+except ZeroDivisionError:
+    print("[Error] You cant divide by zero!!")
+    sys.exit(1)
+except AttributeError:
+    print("[Error] List doesn't have banana")
     sys.exit(1)
 
-if len(names) >= 3:
-    print(names[2])
 else:
-    print("Missing name in the list")
+    print("Sucesso!!")
+finally:
+    print("Execute isso sempre!")
+
+try:
+    print(names[2])
+except:
+    print("[Error] Missing name in the list")
     sys.exit(1)
