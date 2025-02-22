@@ -34,11 +34,13 @@ import sys
 from datetime import datetime
 arguments = sys.argv[1:]
 
+
 if not arguments:
     operation = input("operação: ")
     n1 = input("n1: ")
     n2 = input("n2: ")
     arguments = [operation, n1, n2]
+
 elif len(arguments) != 3:
     print("Número de argumentos inválidos")
     print("ex: `sum 5 5`")
@@ -63,7 +65,11 @@ for num in nums:
         num = int(num)
     validated_nums.append(num)
 
-n1, n2 = validated_nums
+try:
+    n1, n2 = validated_nums
+except ValueError as e:
+    print(str(e))
+    sys.exit(1)
 
 # TODO: Usar dict de funções
 

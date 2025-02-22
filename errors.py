@@ -6,6 +6,7 @@ import os
 # EAFP - Easy to Ask Forgiveness than permission
 # (É mais fácil pedir perdão do que permissão)
 
+
 try:
     names = open("names.txt").readlines()
 
