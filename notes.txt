@@ -1,3 +1,4 @@
 Minha primeira nota	geral	Meu nome é Emilly
 Minha segunda nota	tech	Python é legal
 Minha terceira nota	tech	Java também é legal
+Aprendendo	VIDA	Estou feliz em aprender python.
